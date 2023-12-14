@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMP;
 
 public class ScoringSystem : MonoBehaviour
 {
     //Creating an gameobject visible to the code
-    public GameObject scoreText;
+
     public static int theScore;
     
     //To detect the ship's collision when it enters the gameobject
-    private void OnTriggerEnter(Collider other)
+    void Update()
     {
-        scoreText.GetComponent<Text>().text = "SCORE: " + theScore;
+        gameObject.GetComponent<TMP>().text = "SCORE: " + theScore;
     }
 }
